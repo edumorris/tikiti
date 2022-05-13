@@ -1,3 +1,12 @@
+# Custom
+virtual
+migrator.sh
+netserver.sh
+env
+django_setup.sh
+notes.txt
+.idea
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
