@@ -1,0 +1,2 @@
+# tikiti
+Django Ticketing Application
