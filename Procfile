@@ -1,0 +1,1 @@
+web: gunicorn tikiti.wsgi --log-file - 
