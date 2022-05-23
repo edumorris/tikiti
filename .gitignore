@@ -6,6 +6,7 @@ env
 django_setup.sh
 notes.txt
 .idea
+herokupush.sh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
