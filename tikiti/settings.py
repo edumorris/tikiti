@@ -33,7 +33,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # Application definition
 
 INSTALLED_APPS = [
-    'tikiti',
+    'tickets',
     'bootstrap5',
     'material',
     'material.frontend',

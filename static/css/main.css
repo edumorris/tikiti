@@ -1,0 +1,42 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #e3e2dfff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navigation Styling */
+.navbar-container {
+    display: inline-flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    color: #ee4c7cff;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link::after {
+    text-decoration: none;
+}
+
+.nav-logo {
+    padding-left: 1rem;
+    height: 3rem;
+}
