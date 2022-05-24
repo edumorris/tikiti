@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.urls import path
 
 urlpatterns = [
-    path("", views.eventsView, name="events_view_page"),
+    path("", views.events_view, name="events_view_page"),
 ]
 
 if settings.DEBUG:

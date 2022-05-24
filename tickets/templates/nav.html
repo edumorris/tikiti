@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-xl">
     <div class="container-fluid navbar-container">
         <a class="navbar-brand" href="/">
-            <img class="nav-logo for-big-screen" src="{% static 'images/etikiti.png' %}" alt="Cydeo Logo">
+            <img class="nav-logo for-big-screen" src="{% static 'images/etikiti.png' %}" alt="etikiti Logo">
         </a>
         <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item dropdown" id="user-menu">
@@ -12,10 +12,10 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span>{{ user.username }}</span>
                         <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
-                            width="40" height="40" class="rounded-circle">
+                            width="40" height="40" class="rounded-circle" alt="User Profile Picture">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Dashboard</a>
+                        <a class="dropdown-item" href="#">Events Management</a>
                         <a class="dropdown-item" href="#">Edit Profile</a>
                         <hr>
                         <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
