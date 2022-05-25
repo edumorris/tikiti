@@ -10,8 +10,17 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
+def page_not_found_view(request, exception):
+    context = {
+        "title": "etikiti - 404 Page Not Found",
+    }
+    return render(request, "404.html", context, status=404)
+    
 def user_login(request): # Login page
-    title = "etikiti - Login"
+    context = {
+        "title": "etikiti - Login"
+    }
+    
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -28,7 +37,7 @@ def user_login(request): # Login page
             messages.warning(request, "The Username or Password is incorrect")
             return redirect(user_login)
     else:
-        return render(request, 'user_management/login.html', {"title": title})
+        return render(request, 'user_management/login.html', context)
     
     
 def events_view(request): # Homepage

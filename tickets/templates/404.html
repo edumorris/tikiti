@@ -1,0 +1,22 @@
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+<link rel="stylesheet" href="{% static 'css/404.css' %}">
+{% endblock %}
+
+{% block content %}
+<div>
+    <aside>
+        <img src="{% static 'images/404.png' %}" alt="404 image" />
+    </aside>
+    <main>
+        <h1>sorry!</h1>
+        <p>
+            either you aren't cool enough to visit this page or it doesn't exist <em>. . . like your social life.</em>
+        </p>
+        <a href="/">you can go now!</a>
+    </main>
+</div>
+{% endblock %}

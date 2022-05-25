@@ -32,3 +32,5 @@ urlpatterns = [
     # path('static/(?P<path>.*)', serve,{'document_root': settings.STATIC_ROOT}),
     path('static/<path>', serve,{'document_root': settings.STATIC_ROOT}),
 ]
+
+handler404 = "tickets.views.page_not_found_view"

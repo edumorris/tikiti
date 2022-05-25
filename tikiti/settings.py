@@ -35,8 +35,6 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 INSTALLED_APPS = [
     'tickets',
     'bootstrap5',
-    'material',
-    'material.frontend',
     'fontawesome_5',
     'django.contrib.admin',
     'django.contrib.auth',
