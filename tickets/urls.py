@@ -5,6 +5,7 @@ from django.urls import path
 
 urlpatterns = [
     path("", views.events_view, name="events_view_page"),
+    path("create-new-event", views.events_upload, name="event_upload"),
 ]
 
 if settings.DEBUG:

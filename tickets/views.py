@@ -9,6 +9,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
+# Custom
+from .models import Events
+from .forms import EventsForm
+
 # Create your views here.
 def page_not_found_view(request, exception):
     context = {
@@ -46,3 +50,28 @@ def events_view(request): # Homepage
     }
     
     return render(request, "events.html", context)
+
+def events_upload(request):
+    
+    context = {
+        "title": "etikiti - Add Events",
+        "event_form": EventsForm(),
+    }
+    
+    if request.method == "POST":
+        form = EventsForm(request.POST, request.FILES)
+        if form.is_valid():
+            ev_title = form.cleaned_data["event_title"]
+            ev_description = form.cleaned_data["event_description"]
+            ev_date = form.cleaned_data["event_date"]
+            ev_poster = form.cleaned_data["event_poster"]
+            ev_status = form.cleaned_data["event_status"]
+            
+            event = Events(eventTitle = ev_title, eventDescription = ev_description, eventDate = ev_date, eventPoster = ev_poster, active = ev_status)
+            
+            event.save()
+            
+            return redirect(events_upload)
+            # Reload page with message that the post has been uploaded successfully
+            
+    return render(request, "events-upload.html", context)

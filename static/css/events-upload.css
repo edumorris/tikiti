@@ -1,0 +1,38 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e2dfff !important;
+}
+
+.container form {
+    width: 60%;
+    background: rgba( 227, 175, 188, 0.25 );
+    padding: 30px;
+    -webkit-box-shadow: 0 8px 32px 0 rgba(238, 76, 124, 0.37);
+    -moz-box-shadow: 0 8px 32px 0 rgba(238, 76, 124, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(238, 76, 124, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: 600 !important;
+}
+.asteriskField {
+    color: red;
+}
+
+input[type="submit"] {
+    background: #ee4c7cff !important;
+    border: none;
+    float: right;
+}
