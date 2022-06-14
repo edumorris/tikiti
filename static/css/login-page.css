@@ -1,5 +1,11 @@
-body, html {
-    background: #ee4c7cff;
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #e3e2dfff !important;
+}
+
+.container {
+    background-color: #e3e2dfff !important;
 }
 
 .login-form {
@@ -13,7 +19,7 @@ body, html {
 
 a {
     z-index: 1;
-    color: #e3e2dfff !important;
+    color: #ee4c7cff !important;
     position: absolute;
     font-size: larger;
     top: 5%;
@@ -29,17 +35,23 @@ a:hover {
 }
 
 form {
-    background: #e3e2dfff !important;
-    box-shadow: 0 8px 32px 0 rgba(227, 226, 223, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    width: 60%;
+    background: rgba( 227, 175, 188, 0.25 );
+    padding: 30px;
+    -webkit-box-shadow: 0 8px 32px 0 rgba(238, 76, 124, 0.37);
+    -moz-box-shadow: 0 8px 32px 0 rgba(238, 76, 124, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(238, 76, 124, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+label {
+    font-weight: 600 !important;
 }
 
 button {
-    width: 100%;
     display: block;
     margin: 0 auto !important;
     border-radius: 5px;
@@ -48,6 +60,7 @@ button {
     background: #ee4c7cff !important;
     color: #e3e2dfff !important;
     font-weight: bold !important;
+    float: right;
 }
 
 input {

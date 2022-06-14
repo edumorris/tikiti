@@ -2,6 +2,7 @@
 {% include 'material/includes/material_css.html' %}
 {% include 'material/includes/material_js.html' %}
 {% load static %}
+{% load bootstrap5 %}
 
 {% block styles %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -10,6 +11,8 @@
 {% endblock %}
 
 {% block content %}
+    {% load crispy_forms_tags %}
+
     <div class="container">
         <a onclick="history.back()">
             <i class="fa-solid fa-arrow-left-long fa-2x"></i>
@@ -17,7 +20,7 @@
         <div class="login-form">
             <form action="" method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form | crispy }}
                 <button class="btn btn-primary" type="submit">Log In</button>
             </form>
         </div>
