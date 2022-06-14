@@ -65,7 +65,7 @@ def events_upload(request):
             ev_description = form.cleaned_data["event_description"]
             ev_date = form.cleaned_data["event_date"]
             ev_poster = form.cleaned_data["event_poster"]
-            ev_status = form.cleaned_data["event_status"]
+            ev_status = form.cleaned_data["active_status"]
             
             event = Events(eventTitle = ev_title, eventDescription = ev_description, eventDate = ev_date, eventPoster = ev_poster, active = ev_status)
             
