@@ -20,6 +20,31 @@
         {% include 'nav.html' %}
     </header>
 
+    <div class="container">
+        {% if events %}
+            {% for event in events %}
+                <div>
+                    <div class="whole-card">
+                        <div class="event-date">
+                            <span class="date"> {{ event.eventDate.day }}</span>
+                            <span class="month" id="event-month"> {{ event.eventDate | date:"M" }}</span>
+                            
+                            <span class="year">{{ event.eventDate.year }}</span>
+                        </div>
+                        <div class="card event-card" style="background-image: url({{ MEDIA_URL }}{{ event.eventPoster }}) !important;">
+                            <div class="event-content">
+                                <h2 class="event-title">{{ event.eventTitle }}</h2>
+                                <span></span>
+                                <p class="event-description"> {{ event.eventDescription }}</p>
+                                <a href="#" class="btn buy-now">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
     <main>
         {# Section for weekend events #}
         <div class="container">

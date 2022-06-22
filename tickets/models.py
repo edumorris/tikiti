@@ -8,6 +8,7 @@ class Events(models.Model):
     eventDate = models.DateField()
     eventPoster = models.ImageField(upload_to = "posters/%Y/%m/%d/")
     active = models.BooleanField(default=True)
+    feature = models.BooleanField(default=False, null=True)
     
     def __str__(self):
         return self.eventTitle

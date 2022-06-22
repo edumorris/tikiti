@@ -45,9 +45,14 @@ def user_login(request): # Login page
     
     
 def events_view(request): # Homepage
+    
+        
     context = {
-        "title": "etikiti - Events"
+        "title": "etikiti - Events",
+        "events": Events.objects.all(),
     }
+    
+
     
     return render(request, "events.html", context)
 
