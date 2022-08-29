@@ -22,6 +22,7 @@ a {
     color: #ee4c7cff !important;
     position: absolute;
     font-size: larger;
+    font-weight: bold;
     top: 5%;
     left: 3%;
     cursor: pointer;

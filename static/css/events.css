@@ -13,29 +13,10 @@
     box-sizing: border-box;
 }
 
-.current-weekend-events {
+main {
     display: flex;
+    align-items: center;
     flex-direction: column;
-    padding: 1rem;
-    max-width: 1024px;
-    margin: 0 auto;
-    font-family: var(--font-sans);
-    align-items: center;
-    justify-content: center;
-}
-
-.weekend-event-cards, .all-event-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.whole-card {
-    width: 33%;
-    position: relative;
-    padding: 10px;
 }
 
 .event-date {
@@ -62,7 +43,7 @@
 }
 
 .card {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -70,6 +51,7 @@
     padding: 1rem;
     width: 100%;
     min-width: 350px;
+    height: 100% !important;
     text-align: center;
     color: var(--primary-font-color);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
@@ -105,7 +87,21 @@
     transition: transform calc(var(--d) * 2) var(--e);
 }
 
-.whole-card:nth-child(1) .card:before {
+.whole-card {
+    margin-top: 10px;
+    width: 50%;
+    position: relative;
+    height: 60vh;
+    padding: 10px;
+    transition: all 1s  ;
+}
+
+.whole-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* .whole-card:nth-child(1) .card:before {
     background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
 }
 
@@ -115,7 +111,7 @@
 
 .whole-card:nth-child(3) .card:before {
     background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
+} */
 
 .event-content {
     position: relative;
@@ -123,6 +119,7 @@
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
+    height: 100%;
     padding: 1rem;
     transition: transform var(--d) var(--e);
     z-index: 1;
@@ -131,6 +128,10 @@
 
 .event-content>*+* {
     margin-top: 1rem;
+}
+
+.event-title, .event-description {
+    text-align: left;
 }
 
 .event-title {
@@ -150,7 +151,9 @@
 .buy-now {
     cursor: pointer;
     margin-top: 1.5rem;
-    position: relative;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
     padding: 0.75rem 1.5rem;
     font-size: 0.65rem;
     font-weight: bold;
@@ -170,45 +173,8 @@
     outline-offset: 3px;
 }
 
-#all-other-events {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
-
 .all-events h1 {
     text-align: center;
-}
-
-.featured-events {
-    background: rgba(227, 226, 223, 0.75);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    max-height: 95vh;
-    min-height: 95vh;
-    overflow-y: scroll;
-    -webkit-box-shadow: 0 8px 32px 0 rgba(238, 76, 124, 0.37);
-    -moz-box-shadow: 0 8px 32px 0 rgba(238, 76, 124, 0.37);
-    box-shadow: 0 8px 32px 0 rgba(238, 76, 124, 0.37);
-}
-
-.featured-events h1 {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.featured-events .featured-events-cards {
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.featured-events .whole-card {
-    width: 80%;
 }
 
 @media (min-width: 600px) {
@@ -222,30 +188,15 @@
 }
 
 @media (max-width: 800px) {
-    .weekend-event-cards {
-        flex-direction: column;
-    }
-
     .card {
         width: 100%;
         height: 100%;
     }
 
     .whole-card {
-        width: 70%;
+        width: 90%;
         position: relative;
         height: 450px;
-    }
-
-    #all-other-events {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        width: 80%;
-    }
-
-    .all-event-cards, .featured-events-cards {
-        justify-content: center;
     }
 }
 

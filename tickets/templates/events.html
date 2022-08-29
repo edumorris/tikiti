@@ -19,227 +19,34 @@
     <header>
         {% include 'nav.html' %}
     </header>
-
+    
+    
     <div class="container">
-        {% if events %}
-            {% for event in events %}
-                <div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date"> {{ event.eventDate.day }}</span>
-                            <span class="month" id="event-month"> {{ event.eventDate | date:"M" }}</span>
-                            
-                            <span class="year">{{ event.eventDate.year }}</span>
-                        </div>
-                        <div class="card event-card" style="background-image: url({{ MEDIA_URL }}{{ event.eventPoster }}) !important;">
-                            <div class="event-content">
-                                <h2 class="event-title">{{ event.eventTitle }}</h2>
-                                <span></span>
-                                <p class="event-description"> {{ event.eventDescription }}</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
+        <main>
+            {% if events %}
+                {% for event in events %}
+                    <a href=" /{{ event.eventTitle }}/{{ event.id }}">
+                        <div class="whole-card">
+                            <div class="event-date">
+                                <span class="date"> {{ event.eventDate.day }}</span>
+                                <span class="month" id="event-month"> {{ event.eventDate | date:"M" }}</span>
+                                
+                                <span class="year">{{ event.eventDate.year }}</span>
+                            </div>
+                            <div class="card event-card" style="background-image: url({{ MEDIA_URL }}{{ event.eventPoster }}) !important;">
+                                <div class="event-content">
+                                    <h2 clas="event-title">{{ event.eventTitle }}</h2>
+                                    <span></span>
+                                    <p class="event-description"> {{ event.eventDescription }}</p>
+                                    <a href="/{{ event.eventTitle }}/{{ event.id }}" class="btn buy-now">Buy Now</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            {% endfor %}
-        {% endif %}
+                    </a>
+                {% endfor %}
+            {% endif %}
+        </main>
     </div>
-
-    <main>
-        {# Section for weekend events #}
-        <div class="container">
-            <section class="current-weekend-events">
-                <h1>Events This Weekend</h1>
-                <div class="weekend-event-cards">
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">01</span>
-                            <span class="month">June</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">Mountain View</h2>
-                                <p class="event-description">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">21</span>
-                            <span class="month">May</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">To The Beach</h2>
-                                <p class="event-description">Plan your next beach trip with these fabulous destinations</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">20</span>
-                            <span class="month">May</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">Desert Destinations</h2>
-                                <p class="event-description">It's the desert you've always dreamed of</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        {# Section for all events & featured events on the sidebar #}
-        <div class="container-fluid" id="all-other-events">
-            {# Section for all events #}
-            <section class="all-events" id="all-events-section">
-                <h1>All Events</h1>
-                <div class="all-event-cards">
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">01</span>
-                            <span class="month">June</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">Mountain View</h2>
-                                <p class="event-description">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">21</span>
-                            <span class="month">May</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">To The Beach</h2>
-                                <p class="event-description">Plan your next beach trip with these fabulous destinations</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">20</span>
-                            <span class="month">May</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">Desert Destinations</h2>
-                                <p class="event-description">It's the desert you've always dreamed of</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">01</span>
-                            <span class="month">June</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">Mountain View</h2>
-                                <p class="event-description">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">21</span>
-                            <span class="month">May</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">To The Beach</h2>
-                                <p class="event-description">Plan your next beach trip with these fabulous destinations</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">20</span>
-                            <span class="month">May</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">Desert Destinations</h2>
-                                <p class="event-description">It's the desert you've always dreamed of</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {# Section for featured events #}
-            <section class="featured-events" id="featured-events-section">
-                <h1>Featured Events</h1>
-                <div class="featured-events-cards">
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">01</span>
-                            <span class="month">June</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">Mountain View</h2>
-                                <p class="event-description">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">21</span>
-                            <span class="month">May</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">To The Beach</h2>
-                                <p class="event-description">Plan your next beach trip with these fabulous destinations</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="whole-card">
-                        <div class="event-date">
-                            <span class="date">20</span>
-                            <span class="month">May</span>
-                            <span class="year">2022</span>
-                        </div>
-                        <div class="card event-card">
-                            <div class="event-content">
-                                <h2 class="event-title">Desert Destinations</h2>
-                                <p class="event-description">It's the desert you've always dreamed of</p>
-                                <a href="#" class="btn buy-now">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
 
     <footer>
         {% include 'footer.html' %}

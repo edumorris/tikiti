@@ -32,6 +32,10 @@ img {
     text-decoration: none;
 }
 
+#login-btn {
+    font-size: larger;
+}
+
 .nav-link::after {
     text-decoration: none;
 }
